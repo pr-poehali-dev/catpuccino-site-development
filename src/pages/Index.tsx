@@ -16,29 +16,31 @@ const Index = () => {
     {
       category: 'Кофе',
       items: [
-        { name: 'Эспрессо', price: 130, description: 'Классический итальянский кофе' },
-        { name: 'Американо', price: 150, description: 'Эспрессо с горячей водой' },
-        { name: 'Капучино', price: 180, description: 'Эспрессо с молочной пенкой' },
-        { name: 'Латте', price: 190, description: 'Кофе с молоком и нежной пенкой' },
-        { name: 'Раф', price: 220, description: 'Нежный кофе со сливками' },
-        { name: 'Флэт Уайт', price: 200, description: 'Двойной эспрессо с микропенкой' },
+        { name: 'Эспрессо', price: 80, description: 'Классический итальянский кофе' },
+        { name: 'Американо', price: 100, description: 'Эспрессо с горячей водой' },
+        { name: 'Капучино', price: 150, description: 'Эспрессо с молочной пенкой' },
+        { name: 'Латте', price: 160, description: 'Кофе с молоком и нежной пенкой' },
+        { name: 'Флэт Уайт', price: 170, description: 'Двойной эспрессо с микропенкой' },
+        { name: 'Раф', price: 180, description: 'Нежный кофе со сливками' },
       ],
     },
     {
       category: 'Альтернативное молоко',
       items: [
-        { name: 'Овсяное', price: 50, description: 'Добавка к напитку' },
-        { name: 'Кокосовое', price: 50, description: 'Добавка к напитку' },
-        { name: 'Миндальное', price: 50, description: 'Добавка к напитку' },
+        { name: 'Овсяное молоко', price: 30, description: 'Добавка к напитку' },
+        { name: 'Кокосовое молоко', price: 40, description: 'Добавка к напитку' },
+        { name: 'Миндальное молоко', price: 40, description: 'Добавка к напитку' },
+        { name: 'Матча латте', price: 200, description: 'Латте с японским зелёным чаем' },
+        { name: 'Какао', price: 150, description: 'Горячий шоколадный напиток' },
       ],
     },
     {
       category: 'Десерты',
       items: [
+        { name: 'Круассан', price: 120, description: 'Французская выпечка' },
         { name: 'Чизкейк', price: 180, description: 'Классический с ягодным соусом' },
-        { name: 'Брауни', price: 160, description: 'Шоколадный с орехами' },
-        { name: 'Круассан', price: 140, description: 'Французская выпечка' },
-        { name: 'Маффин', price: 120, description: 'С шоколадом или черникой' },
+        { name: 'Брауни', price: 150, description: 'Шоколадный с орехами' },
+        { name: 'Печенье', price: 80, description: 'Домашнее печенье' },
       ],
     },
   ];
@@ -46,8 +48,8 @@ const Index = () => {
   const benefits = [
     {
       icon: 'Coffee',
-      title: 'Авторские рецепты',
-      description: 'Уникальные напитки от нашего бариста',
+      title: 'Качественный кофе',
+      description: 'Лучшие зёрна и профессиональное оборудование',
     },
     {
       icon: 'Heart',
@@ -55,14 +57,14 @@ const Index = () => {
       description: 'Идеальное место для встреч и работы',
     },
     {
+      icon: 'Leaf',
+      title: 'Растительное молоко',
+      description: 'Овсяное, кокосовое и миндальное на выбор',
+    },
+    {
       icon: 'Sparkles',
       title: 'Свежая выпечка',
       description: 'Каждый день готовим домашние десерты',
-    },
-    {
-      icon: 'Leaf',
-      title: 'Эко-упаковка',
-      description: 'Заботимся об окружающей среде',
     },
   ];
 
@@ -161,7 +163,7 @@ const Index = () => {
                     <Icon name="MapPin" size={32} className="text-primary" />
                     <div>
                       <p className="font-semibold text-lg">Мы находимся в Зеленограде</p>
-                      <p className="text-muted-foreground">Приходите попробовать наш кофе!</p>
+                      <p className="text-muted-foreground">корп. 1448</p>
                     </div>
                   </div>
                 </div>
@@ -203,9 +205,7 @@ const Index = () => {
 
         <section id="benefits" className="py-20 bg-white">
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-primary">
-              Почему выбирают нас
-            </h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-primary">Почему мы?</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
               {benefits.map((benefit, idx) => (
                 <Card key={idx} className="text-center hover:shadow-xl transition-shadow">
@@ -222,64 +222,60 @@ const Index = () => {
           </div>
         </section>
 
-        <section id="contacts" className="py-20 bg-secondary/5">
+        <section id="contacts" className="py-20 bg-muted/30">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-primary">Контакты</h2>
-            <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-              <Card>
-                <CardContent className="p-8 space-y-6">
-                  <div className="flex items-start gap-4">
-                    <Icon name="MapPin" size={24} className="text-primary mt-1" />
-                    <div>
-                      <h3 className="font-semibold text-lg mb-2">Адрес</h3>
-                      <p className="text-muted-foreground">Зеленоград, Москва</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <Icon name="Clock" size={24} className="text-primary mt-1" />
-                    <div>
-                      <h3 className="font-semibold text-lg mb-2">Часы работы</h3>
-                      <p className="text-muted-foreground">Пн-Вс: 08:00 - 22:00</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <Icon name="Phone" size={24} className="text-primary mt-1" />
-                    <div>
-                      <h3 className="font-semibold text-lg mb-2">Телефон</h3>
-                      <p className="text-muted-foreground">+7 (XXX) XXX-XX-XX</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <Icon name="Mail" size={24} className="text-primary mt-1" />
-                    <div>
-                      <h3 className="font-semibold text-lg mb-2">Email</h3>
-                      <p className="text-muted-foreground">hello@catpuccino.ru</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-              <div className="bg-muted/50 rounded-2xl p-4 flex items-center justify-center">
-                <div className="text-center space-y-4">
-                  <Icon name="Map" size={64} className="text-primary mx-auto" />
-                  <p className="text-xl font-semibold">Карта проезда</p>
-                  <p className="text-muted-foreground">Мы находимся в самом сердце Зеленограда</p>
-                </div>
+            <div className="max-w-4xl mx-auto">
+              <div className="grid md:grid-cols-3 gap-8 mb-12">
+                <Card>
+                  <CardContent className="p-8 text-center">
+                    <Icon name="MapPin" size={48} className="mx-auto mb-4 text-primary" />
+                    <h3 className="text-xl font-bold mb-2">Адрес</h3>
+                    <p className="text-muted-foreground">г. Зеленоград,<br />корп. 1448</p>
+                  </CardContent>
+                </Card>
+                <Card>
+                  <CardContent className="p-8 text-center">
+                    <Icon name="Clock" size={48} className="mx-auto mb-4 text-primary" />
+                    <h3 className="text-xl font-bold mb-2">Время работы</h3>
+                    <p className="text-muted-foreground">Ежедневно<br />8:00 - 22:00</p>
+                  </CardContent>
+                </Card>
+                <Card>
+                  <CardContent className="p-8 text-center">
+                    <Icon name="Phone" size={48} className="mx-auto mb-4 text-primary" />
+                    <h3 className="text-xl font-bold mb-2">Телефон</h3>
+                    <a
+                      href="tel:+79999999999"
+                      className="text-primary hover:underline"
+                    >
+                      +7 (999) 999-99-99
+                    </a>
+                  </CardContent>
+                </Card>
               </div>
             </div>
           </div>
         </section>
       </main>
 
-      <footer className="bg-secondary text-white py-12">
-        <div className="container mx-auto px-4 text-center">
-          <img
-            src="https://cdn.poehali.dev/files/bab64f0f-dc9a-4195-a77d-060bbec6c09f.png"
-            alt="CATPUCCINO"
-            className="h-16 w-16 mx-auto mb-4"
-          />
-          <h3 className="text-2xl font-bold mb-2">CATPUCCINO</h3>
-          <p className="font-handwritten text-xl mb-6">Purrrfect Time</p>
-          <p className="text-white/80">© 2025 CATPUCCINO. Все права защищены.</p>
+      <footer className="relative py-12 overflow-hidden">
+        <div className="absolute inset-0 pattern-bg opacity-5"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex items-center gap-4">
+              <img
+                src="https://cdn.poehali.dev/files/bab64f0f-dc9a-4195-a77d-060bbec6c09f.png"
+                alt="CATPUCCINO"
+                className="h-12 w-12"
+              />
+              <div>
+                <p className="font-bold text-lg text-primary">CATPUCCINO</p>
+                <p className="text-sm text-muted-foreground">Purrrfect Time</p>
+              </div>
+            </div>
+            <p className="text-muted-foreground">© 2024 CATPUCCINO. Все права защищены.</p>
+          </div>
         </div>
       </footer>
     </div>
