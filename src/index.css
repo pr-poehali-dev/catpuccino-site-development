@@ -6,11 +6,11 @@
 
 @layer base {
   :root {
-    --background: 30 20% 98%;
-    --foreground: 0 0% 0%;
+    --background: 25 35% 15%;
+    --foreground: 0 0% 100%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 0%;
+    --card: 25 35% 98%;
+    --card-foreground: 25 35% 15%;
 
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 0%;
@@ -21,8 +21,8 @@
     --secondary: 24 68% 30%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 30 20% 95%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 25 30% 20%;
+    --muted-foreground: 0 0% 85%;
 
     --accent: 161 81% 31%;
     --accent-foreground: 0 0% 100%;
@@ -30,8 +30,8 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 30 20% 90%;
-    --input: 30 20% 90%;
+    --border: 25 30% 25%;
+    --input: 25 30% 25%;
     --ring: 161 81% 31%;
 
     --radius: 1rem;
@@ -114,5 +114,77 @@
     background-image: url("https://cdn.poehali.dev/files/1f312c0a-ecf5-424e-b673-28a9f7793314.jpeg");
     background-size: 200px;
     background-repeat: repeat;
+  }
+
+  .coffee-beans {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(ellipse at center, #4a2c1a 0%, #2d1810 100%);
+    border-radius: 45% 55% 50% 50%;
+    opacity: 0.3;
+  }
+
+  .coffee-beans::after {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 40px;
+    background: #1a0f08;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(20deg);
+  }
+
+  .coffee-splash {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(
+      circle,
+      rgba(139, 85, 54, 0.4) 0%,
+      rgba(139, 85, 54, 0.2) 40%,
+      transparent 70%
+    );
+    filter: blur(2px);
+  }
+
+  .milk-splash {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.15) 0%,
+      rgba(255, 255, 255, 0.08) 50%,
+      transparent 70%
+    );
+    border-radius: 50%;
+  }
+
+  .coffee-stain {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(
+      circle,
+      rgba(101, 67, 33, 0.3) 0%,
+      rgba(101, 67, 33, 0.2) 30%,
+      transparent 60%
+    );
+    border-radius: 50%;
+    filter: blur(3px);
+  }
+
+  .coffee-stain::before {
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    top: 5%;
+    left: 5%;
+    border: 2px solid rgba(101, 67, 33, 0.25);
+    border-radius: 50%;
+    filter: blur(1px);
   }
 }

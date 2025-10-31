@@ -69,8 +69,22 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen">
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border">
+    <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
+      <div className="coffee-beans" style={{ top: '10%', left: '5%', transform: 'rotate(25deg)' }}></div>
+      <div className="coffee-beans" style={{ top: '30%', right: '8%', transform: 'rotate(-15deg)' }}></div>
+      <div className="coffee-beans" style={{ bottom: '15%', left: '10%', transform: 'rotate(45deg)' }}></div>
+      <div className="coffee-beans" style={{ top: '60%', right: '15%', transform: 'rotate(-30deg)' }}></div>
+      
+      <div className="coffee-splash" style={{ top: '20%', right: '5%' }}></div>
+      <div className="coffee-splash" style={{ bottom: '25%', left: '8%' }}></div>
+      
+      <div className="milk-splash" style={{ top: '40%', left: '5%' }}></div>
+      <div className="milk-splash" style={{ top: '70%', right: '10%' }}></div>
+      
+      <div className="coffee-stain" style={{ top: '15%', left: '15%' }}></div>
+      <div className="coffee-stain" style={{ bottom: '20%', right: '12%' }}></div>
+
+      <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
@@ -109,17 +123,16 @@ const Index = () => {
 
       <main className="pt-24">
         <section id="home" className="relative min-h-[600px] flex items-center justify-center overflow-hidden">
-          <div className="absolute inset-0 pattern-bg opacity-10"></div>
           <div className="container mx-auto px-4 text-center relative z-10">
             <img
               src="https://cdn.poehali.dev/files/bab64f0f-dc9a-4195-a77d-060bbec6c09f.png"
               alt="CATPUCCINO Logo"
               className="mx-auto h-48 w-48 mb-8 animate-fade-in"
             />
-            <h2 className="text-5xl md:text-7xl font-bold mb-6 text-primary animate-fade-in">
+            <h2 className="text-5xl md:text-7xl font-bold mb-6 text-white animate-fade-in">
               CATPUCCINO
             </h2>
-            <p className="text-2xl md:text-3xl mb-8 font-handwritten text-secondary animate-fade-in">
+            <p className="text-2xl md:text-3xl mb-8 font-handwritten text-primary animate-fade-in">
               Purrrfect Time для вас и ваших близких
             </p>
             <p className="text-xl mb-12 max-w-2xl mx-auto text-muted-foreground animate-fade-in">
@@ -136,10 +149,10 @@ const Index = () => {
           </div>
         </section>
 
-        <section id="about" className="py-20 bg-white">
+        <section id="about" className="py-20 bg-background/80 backdrop-blur-sm relative z-10">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-primary">О нас</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-white">О нас</h2>
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div>
                   <img
@@ -149,12 +162,12 @@ const Index = () => {
                   />
                 </div>
                 <div className="space-y-6">
-                  <p className="text-lg leading-relaxed">
+                  <p className="text-lg leading-relaxed text-foreground">
                     CATPUCCINO — это не просто кофейня, это место, где каждый гость становится частью нашей дружной
                     семьи. Мы создали пространство, где можно насладиться идеальным кофе, поработать в комфортной
                     обстановке или просто провести время с друзьями.
                   </p>
-                  <p className="text-lg leading-relaxed">
+                  <p className="text-lg leading-relaxed text-foreground">
                     Наш талантливый бариста готовит каждую чашку с любовью и мастерством, используя только лучшие
                     сорта кофе. А милый котик на нашем логотипе напоминает о том, что жизнь должна быть уютной и
                     приятной!
@@ -172,13 +185,13 @@ const Index = () => {
           </div>
         </section>
 
-        <section id="menu" className="py-20 bg-muted/30">
+        <section id="menu" className="py-20 bg-muted/40 relative z-10">
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-primary">Меню</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white">Меню</h2>
             <div className="max-w-5xl mx-auto space-y-12">
               {menuItems.map((category, idx) => (
                 <div key={idx}>
-                  <h3 className="text-3xl font-bold mb-6 text-secondary flex items-center gap-3">
+                  <h3 className="text-3xl font-bold mb-6 text-primary flex items-center gap-3">
                     {category.category === 'Кофе' && <Icon name="Coffee" size={32} />}
                     {category.category === 'Альтернативное молоко' && <Icon name="Milk" size={32} />}
                     {category.category === 'Десерты' && <Icon name="Cake" size={32} />}
@@ -203,9 +216,9 @@ const Index = () => {
           </div>
         </section>
 
-        <section id="benefits" className="py-20 bg-white">
+        <section id="benefits" className="py-20 bg-background/80 backdrop-blur-sm relative z-10">
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-primary">Почему мы?</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white">Почему мы?</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
               {benefits.map((benefit, idx) => (
                 <Card key={idx} className="text-center hover:shadow-xl transition-shadow">
@@ -222,9 +235,9 @@ const Index = () => {
           </div>
         </section>
 
-        <section id="contacts" className="py-20 bg-muted/30">
+        <section id="contacts" className="py-20 bg-muted/40 relative z-10">
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-primary">Контакты</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white">Контакты</h2>
             <div className="max-w-4xl mx-auto">
               <div className="grid md:grid-cols-3 gap-8 mb-12">
                 <Card>
@@ -259,9 +272,8 @@ const Index = () => {
         </section>
       </main>
 
-      <footer className="relative py-12 overflow-hidden">
-        <div className="absolute inset-0 pattern-bg opacity-5"></div>
-        <div className="container mx-auto px-4 relative z-10">
+      <footer className="relative py-12 overflow-hidden bg-background/95 z-10">
+        <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-4">
               <img
