@@ -116,6 +116,50 @@
     background-repeat: repeat;
   }
 
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-20px) rotate(10deg);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%,
+    100% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes splash-fade {
+    0%,
+    100% {
+      opacity: 0.4;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.6;
+      transform: scale(1.1);
+    }
+  }
+
+  @keyframes stain-pulse {
+    0%,
+    100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.4;
+      transform: scale(1.05);
+    }
+  }
+
   .coffee-beans {
     position: absolute;
     width: 60px;
@@ -123,6 +167,21 @@
     background: radial-gradient(ellipse at center, #4a2c1a 0%, #2d1810 100%);
     border-radius: 45% 55% 50% 50%;
     opacity: 0.3;
+    animation:
+      float 6s ease-in-out infinite,
+      pulse-glow 4s ease-in-out infinite;
+  }
+
+  .coffee-beans:nth-child(2) {
+    animation-delay: 1s;
+  }
+
+  .coffee-beans:nth-child(3) {
+    animation-delay: 2s;
+  }
+
+  .coffee-beans:nth-child(4) {
+    animation-delay: 3s;
   }
 
   .coffee-beans::after {
@@ -147,6 +206,11 @@
       transparent 70%
     );
     filter: blur(2px);
+    animation: splash-fade 5s ease-in-out infinite;
+  }
+
+  .coffee-splash:nth-of-type(6) {
+    animation-delay: 1.5s;
   }
 
   .milk-splash {
@@ -160,6 +224,11 @@
       transparent 70%
     );
     border-radius: 50%;
+    animation: splash-fade 6s ease-in-out infinite;
+  }
+
+  .milk-splash:nth-of-type(8) {
+    animation-delay: 2s;
   }
 
   .coffee-stain {
@@ -174,6 +243,11 @@
     );
     border-radius: 50%;
     filter: blur(3px);
+    animation: stain-pulse 8s ease-in-out infinite;
+  }
+
+  .coffee-stain:nth-of-type(10) {
+    animation-delay: 2.5s;
   }
 
   .coffee-stain::before {
